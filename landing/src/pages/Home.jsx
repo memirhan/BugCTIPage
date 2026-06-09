@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Rocket, GitMerge, Zap, ShieldCheck, ArrowRight } from 'lucide-react';
 import Layout from '../components/Layout';
 import ComparisonDiagram from '../components/ComparisonDiagram';
@@ -15,12 +16,12 @@ const Home = () => {
                     </h1>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-fade-in" style={{ animationDelay: '300ms' }}>
-                        <a href="/solution" className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white text-black font-black text-lg hover:bg-gray-200 transition-colors shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:scale-105 active:scale-95 duration-300 flex items-center justify-center gap-2 group">
+                        <Link to="/solution" className="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white text-black font-black text-lg hover:bg-gray-200 transition-colors shadow-[0_0_40px_rgba(255,255,255,0.1)] hover:scale-105 active:scale-95 duration-300 flex items-center justify-center gap-2 group">
                             Explore Solution <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </a>
-                        <a href="/product" className="w-full sm:w-auto px-8 py-4 rounded-2xl border border-white/10 text-white font-bold text-lg hover:bg-white/5 transition-colors duration-300">
+                        </Link>
+                        <Link to="/product" className="w-full sm:w-auto px-8 py-4 rounded-2xl border border-white/10 text-white font-bold text-lg hover:bg-white/5 transition-colors duration-300">
                             See the Platform
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </section>
