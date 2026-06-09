@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Mail, Shield, Globe, MessageSquare, Terminal } from 'lucide-react';
 import logo from '../assets/bugcti-logo.png';
 
@@ -27,10 +28,10 @@ const Footer = () => {
                     <div>
                         <h4 className="text-white font-bold mb-6">Product</h4>
                         <ul className="space-y-4 text-github-muted font-medium">
-                            <li><a href="/problem" className="hover:text-brand-indigo transition-colors">The Problem</a></li>
-                            <li><a href="/solution" className="hover:text-brand-indigo transition-colors">Our Solution</a></li>
-                            <li><a href="/product" className="hover:text-brand-indigo transition-colors">Platform</a></li>
-                            <li><a href="/status" className="hover:text-brand-indigo transition-colors">Roadmap</a></li>
+                            <li><Link to="/problem" className="hover:text-brand-indigo transition-colors">The Problem</Link></li>
+                            <li><Link to="/solution" className="hover:text-brand-indigo transition-colors">Our Solution</Link></li>
+                            <li><Link to="/product" className="hover:text-brand-indigo transition-colors">Platform</Link></li>
+                            <li><Link to="/status" className="hover:text-brand-indigo transition-colors">Roadmap</Link></li>
                         </ul>
                     </div>
 
