@@ -89,8 +89,8 @@ const Home = () => {
     return (
         <Layout>
             <SEO
-                title="BugCTI — AI-Powered Code Security for GitHub Pull Requests"
-                description="BugCTI automatically scans every GitHub Pull Request for security vulnerabilities, performance bottlenecks, and logic errors in under 10 seconds. Stop shipping vulnerable code."
+                title="BugCTI — AI-Powered Code Security"
+                description="BugCTI scans every GitHub Pull Request for security vulnerabilities, performance bottlenecks, and logic errors in under 10 seconds."
                 canonical="https://bugcti.com/"
             />
             {/* Hero */}
