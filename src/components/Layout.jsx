@@ -8,10 +8,9 @@ const Layout = ({ children }) => {
             
             {/* Ambient Background Glows */}
             <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-
-                <div className="absolute -top-[20%] -left-[10%] w-[70%] h-[70%] bg-brand-indigo/10 blur-[150px] rounded-full mix-blend-screen"></div>
-                <div className="absolute top-[10%] -right-[10%] w-[60%] h-[60%] bg-brand-purple/10 blur-[150px] rounded-full mix-blend-screen"></div>
-                <div className="absolute -bottom-[20%] left-[20%] w-[60%] h-[60%] bg-blue-900/10 blur-[150px] rounded-full mix-blend-screen"></div>
+                <div className="absolute -top-[20%] -left-[10%] w-[50%] h-[50%] bg-brand-indigo/8 blur-[80px] rounded-full"></div>
+                <div className="absolute top-[10%] -right-[10%] w-[45%] h-[45%] bg-brand-purple/8 blur-[80px] rounded-full"></div>
+                <div className="absolute -bottom-[20%] left-[20%] w-[45%] h-[45%] bg-blue-900/8 blur-[80px] rounded-full"></div>
             </div>
 
             <div className="relative z-10 flex flex-col min-h-screen w-full">

@@ -95,8 +95,8 @@ const Home = () => {
             />
             {/* Hero */}
             <section className="w-full max-w-7xl mx-auto px-6 pt-14 pb-20 relative">
-                <div className="absolute top-0 right-0 w-[700px] h-[500px] bg-brand-indigo/6 blur-[130px] rounded-full pointer-events-none -z-10" />
-                <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-purple/4 blur-[120px] rounded-full pointer-events-none -z-10" />
+                <div className="absolute top-0 right-0 w-[500px] h-[350px] bg-brand-indigo/6 blur-[60px] rounded-full pointer-events-none -z-10" />
+                <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-brand-purple/4 blur-[60px] rounded-full pointer-events-none -z-10" />
 
                 <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
                     {/* Left */}
@@ -130,7 +130,7 @@ const Home = () => {
                     </div>
 
                     {/* Right — PR Mockup */}
-                    <div className="animate-fade-in" style={{ animationDelay: '180ms' }}>
+                    <div className="animate-fade-in" style={{ animationDelay: '80ms' }}>
                         <PRMockup />
                     </div>
                 </div>
@@ -166,7 +166,7 @@ const Home = () => {
                     </div>
 
                     <div className="grid md:grid-cols-3 gap-5 relative">
-    
+
                         {[
                             {
                                 step: '01',
