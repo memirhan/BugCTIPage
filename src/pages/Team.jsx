@@ -4,45 +4,38 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 /* ─────────────────────────────────────────────────────────────────────────
- * TEAM DATA — placeholder content, edit here.
+ * TEAM DATA
  *
- * role / focus / bio / expertise are TEMPORARY placeholders.
- * Replace them with the real titles and specialities.
+ * photo: a file in `public/team/`. Portrait crop, 4:5, 800×1000 webp —
+ *        run it through sharp the same way convert.mjs does. Without a
+ *        photo the card falls back to a branded monogram.
  *
- * photo: drop a file into `public/team/` and set the path, e.g.
- *          photo: '/team/emirhan.webp'
- *        Recommended: portrait crop, 4:5 ratio, at least 800×1000px,
- *        face centred in the upper third. Until a photo is set, the card
- *        renders a branded monogram — nothing looks broken.
+ * bio / expertise: optional. Add them and the card grows to fit; leave
+ *        them out and it stays a clean name-and-role card.
  *
- * links: set to null to hide that icon.
+ * links: set a value to show that icon, leave it null to hide it. When all
+ *        three are null the whole row is dropped.
  * ──────────────────────────────────────────────────────────────────────── */
 const TEAM = [
     {
         name: 'Muhammet Emirhan Sümer',
         role: 'Co-founder',
         focus: 'Product & Engineering',
-        bio: 'Placeholder — builds the review pipeline, the dependency graph engine and the platform behind it.',
-        expertise: ['Placeholder', 'Placeholder', 'Placeholder'],
-        photo: null,
+        photo: '/team/emirhan.webp',
         links: { linkedin: null, github: null, email: null },
     },
     {
         name: 'Bengisu Zorlu',
         role: 'Co-founder',
-        focus: 'Placeholder',
-        bio: 'Placeholder — short one-or-two sentence introduction goes here.',
-        expertise: ['Placeholder', 'Placeholder', 'Placeholder'],
+        focus: 'Business Development',
         photo: null,
         links: { linkedin: null, github: null, email: null },
     },
     {
         name: 'Mehmet Enes Uzun',
         role: 'Co-founder',
-        focus: 'Placeholder',
-        bio: 'Placeholder — short one-or-two sentence introduction goes here.',
-        expertise: ['Placeholder', 'Placeholder', 'Placeholder'],
-        photo: null,
+        focus: 'Project Manager',
+        photo: '/team/enes.webp',
         links: { linkedin: null, github: null, email: null },
     },
 ];
@@ -120,6 +113,7 @@ const SocialLink = ({ href, label, children }) => {
 
 const MemberCard = ({ member }) => {
     const { name, role, focus, bio, expertise, photo, links } = member;
+    const hasLinks = Boolean(links && (links.linkedin || links.github || links.email));
     return (
         <div className="group flex flex-col h-full rounded-2xl border border-white/[0.05] bg-white/[0.01] overflow-hidden transition-all hover:border-brand-indigo/25 hover:bg-brand-indigo/[0.02]">
             <div className="relative aspect-[4/5] overflow-hidden">
@@ -144,32 +138,38 @@ const MemberCard = ({ member }) => {
                 </span>
 
                 <h3 className="text-xl font-black text-white mb-1 tracking-tight">{name}</h3>
-                <p className="text-sm text-white/55 mb-4">{focus}</p>
+                <p className="text-sm text-white/55">{focus}</p>
 
-                <p className="text-sm text-github-muted leading-relaxed mb-5 flex-grow">{bio}</p>
+                {bio && (
+                    <p className="text-sm text-github-muted leading-relaxed mt-4">{bio}</p>
+                )}
 
-                <ul className="flex flex-wrap gap-2 mb-5">
-                    {expertise.map((tag, i) => (
-                        <li
-                            key={`${tag}-${i}`}
-                            className="text-xs px-3 py-1 rounded-full border border-white/[0.06] bg-white/[0.02] text-github-muted"
-                        >
-                            {tag}
-                        </li>
-                    ))}
-                </ul>
+                {expertise?.length > 0 && (
+                    <ul className="flex flex-wrap gap-2 mt-5">
+                        {expertise.map((tag, i) => (
+                            <li
+                                key={`${tag}-${i}`}
+                                className="text-xs px-3 py-1 rounded-full border border-white/[0.06] bg-white/[0.02] text-github-muted"
+                            >
+                                {tag}
+                            </li>
+                        ))}
+                    </ul>
+                )}
 
-                <div className="flex items-center gap-2 pt-4 border-t border-white/[0.05]">
-                    <SocialLink href={links.linkedin} label={`${name} on LinkedIn`}>
-                        <LinkedInMark className="w-3.5 h-3.5" />
-                    </SocialLink>
-                    <SocialLink href={links.github} label={`${name} on GitHub`}>
-                        <GitHubMark className="w-3.5 h-3.5" />
-                    </SocialLink>
-                    <SocialLink href={links.email ? `mailto:${links.email}` : null} label={`Email ${name}`}>
-                        <Mail className="w-3.5 h-3.5" />
-                    </SocialLink>
-                </div>
+                {hasLinks && (
+                    <div className="flex items-center gap-2 mt-auto pt-5 border-t border-white/[0.05]">
+                        <SocialLink href={links.linkedin} label={`${name} on LinkedIn`}>
+                            <LinkedInMark className="w-3.5 h-3.5" />
+                        </SocialLink>
+                        <SocialLink href={links.github} label={`${name} on GitHub`}>
+                            <GitHubMark className="w-3.5 h-3.5" />
+                        </SocialLink>
+                        <SocialLink href={links.email ? `mailto:${links.email}` : null} label={`Email ${name}`}>
+                            <Mail className="w-3.5 h-3.5" />
+                        </SocialLink>
+                    </div>
+                )}
             </div>
         </div>
     );
