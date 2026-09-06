@@ -7,6 +7,7 @@ const Problem = lazy(() => import('./pages/Problem'));
 const Solution = lazy(() => import('./pages/Solution'));
 const Status = lazy(() => import('./pages/Status'));
 const Product = lazy(() => import('./pages/Product'));
+const Team = lazy(() => import('./pages/Team'));
 
 const PageFallback = () => (
     <div style={{ background: '#010409', minHeight: '100vh' }} />
@@ -23,6 +24,7 @@ const App = () => {
                     <Route path="/solution" element={<Solution />} />
                     <Route path="/status" element={<Status />} />
                     <Route path="/product" element={<Product />} />
+                    <Route path="/team" element={<Team />} />
                 </Routes>
             </Suspense>
         </BrowserRouter>

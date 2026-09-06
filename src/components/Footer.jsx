@@ -46,6 +46,7 @@ const Footer = () => {
                                 { to: '/solution', label: 'Our Solution' },
                                 { to: '/product', label: 'Platform' },
                                 { to: '/status', label: 'Roadmap' },
+                                { to: '/team', label: 'Team' },
                             ].map((l) => (
                                 <li key={l.to}>
                                     <Link to={l.to} className="text-sm text-github-muted hover:text-white transition-colors">

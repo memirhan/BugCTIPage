@@ -19,6 +19,7 @@ const Navbar = () => {
         { to: '/solution', label: 'Solution' },
         { to: '/product', label: 'Product' },
         { to: '/status', label: 'Status' },
+        { to: '/team', label: 'Team' },
     ];
 
     return (
