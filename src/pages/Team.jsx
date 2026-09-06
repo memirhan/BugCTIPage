@@ -22,21 +22,21 @@ const TEAM = [
         role: 'Co-founder',
         focus: 'Product & Engineering',
         photo: '/team/emirhan.webp',
-        links: { linkedin: null, github: null, email: null },
+        links: { linkedin: 'https://www.linkedin.com/in/memirhan/', github: null, email: null },
     },
     {
         name: 'Bengisu Zorlu',
         role: 'Co-founder',
         focus: 'Business Development',
         photo: null,
-        links: { linkedin: null, github: null, email: null },
+        links: { linkedin: 'https://www.linkedin.com/in/bengisuzorluu/', github: null, email: null },
     },
     {
         name: 'Mehmet Enes Uzun',
         role: 'Co-founder',
         focus: 'Project Manager',
         photo: '/team/enes.webp',
-        links: { linkedin: null, github: null, email: null },
+        links: { linkedin: 'https://www.linkedin.com/in/mehmetenesuzun/', github: null, email: null },
     },
 ];
 
