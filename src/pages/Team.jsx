@@ -28,7 +28,7 @@ const TEAM = [
         name: 'Bengisu Zorlu',
         role: 'Co-founder',
         focus: 'Business Development',
-        photo: null,
+        photo: '/team/bengisu.webp',
         links: { linkedin: 'https://www.linkedin.com/in/bengisuzorluu/', github: null, email: null },
     },
     {
